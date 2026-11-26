@@ -1,4 +1,4 @@
-const CACHE='playton-win-sandbox-v3';
+const CACHE='playton-win-sandbox-v4';
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(async c=>{await c.addAll(['./','./icon.svg','./icon-192.png','./manifest.webmanifest','./bloom.svg','./bloom-render.webp']);const r=await c.match('./');const html=await r.text();const urls=[...html.matchAll(/(?:src|href)="([^"]+\.(?:js|css))"/g)].map(m=>new URL(m[1],self.registration.scope).href);await Promise.all(urls.map(u=>c.add(u)));return self.skipWaiting()})));
 self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
 self.addEventListener('message',e=>{if(e.data?.type!=='CACHE_RESOURCES'||!Array.isArray(e.data.urls))return;const urls=e.data.urls.filter(u=>typeof u==='string'&&u.startsWith(self.registration.scope)).slice(0,80);e.waitUntil(caches.open(CACHE).then(c=>Promise.allSettled(urls.map(u=>c.add(u)))))});
