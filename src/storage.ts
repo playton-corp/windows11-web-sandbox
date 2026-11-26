@@ -1,0 +1,6 @@
+import {fresh,parseBackup,type VM} from './model';
+const DB='playton-windows11-v1', STORE='machine';
+function db():Promise<IDBDatabase>{return new Promise((resolve,reject)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>r.result.createObjectStore(STORE);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+export async function load():Promise<VM>{try{const d=await db();return await new Promise((res,rej)=>{const tx=d.transaction(STORE,'readonly');const r=tx.objectStore(STORE).get('vm');r.onsuccess=()=>{d.close();try{res(r.result?parseBackup(r.result):fresh())}catch{res(fresh())}};r.onerror=()=>{d.close();rej(r.error)}})}catch{return fresh()}}
+export async function persist(vm:VM){const d=await db();return new Promise<void>((resolve,reject)=>{const tx=d.transaction(STORE,'readwrite');tx.objectStore(STORE).put(JSON.stringify(vm),'vm');tx.oncomplete=()=>{d.close();resolve()};tx.onerror=()=>{d.close();reject(tx.error)}})}
+export function download(name:string,data:string,mime='application/json'){const url=URL.createObjectURL(new Blob([data],{type:mime}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
