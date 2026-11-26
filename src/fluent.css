@@ -1,0 +1,69 @@
+/* Windows 11 visual refresh: Mica, acrylic, Fluent controls and system screens. */
+[data-wall="bloom"]{background-image:url('../public/bloom-render.webp')}
+.screen{--surface:#fbfbfc;--panel:#f5f6f8;--chrome:#f0f3f8;--glass:rgba(247,249,252,.97);--task:rgba(235,242,251,.91);--shadow:#152e504d;--hover:#e8ebf0;--selection:#d9ebfc;--selection-border:#b2d4f4}
+.screen.dark{--glass:rgba(31,33,38,.97);--task:rgba(30,32,38,.92);--chrome:#282b30;--surface:#292c32;--panel:#202328;--hover:#353941}
+.glyph{display:inline-block;flex-shrink:0;vertical-align:middle}
+.toolbar button,.context-menu button,.start-heading button,.button-row button{display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.context-menu button{justify-content:flex-start;width:100%;gap:11px}
+.titlebar{height:42px;flex-basis:42px;background:linear-gradient(115deg,var(--chrome),var(--panel))}
+.titlebar>div:first-child{padding-left:2px}
+.titlebar span{font-size:13px}
+.window-buttons button,.maximize-control{display:grid;place-items:center}
+.window-buttons>button:hover:not(.win-close),.maximize-control:hover{background:var(--hover)}
+.window-buttons .win-close:hover{background:#c42b1c;color:#fff}
+.window{border-radius:10px;box-shadow:0 18px 55px #11284946,0 2px 7px #10243a22}
+.window.focused{box-shadow:0 18px 66px #10274f50,0 0 1px #416082}
+.window-body{background:var(--surface)}
+.toolbar{gap:6px;padding:7px 12px}
+.toolbar button{min-width:34px;gap:6px}
+.actions{border-bottom:1px solid var(--border);min-height:46px}
+.explorer-tabbar{display:flex;align-items:flex-end;gap:5px;background:var(--chrome);padding:0 10px;min-height:37px;border-bottom:1px solid var(--border)}
+.explorer-tabbar>button,.explorer-tab button{border:0;background:transparent;padding:5px;display:grid;place-items:center}
+.explorer-tab{display:flex;gap:9px;align-items:center;width:min(235px,65%);height:33px;padding:0 8px 0 11px;background:var(--surface);border:1px solid var(--border);border-bottom:0;border-radius:8px 8px 0 0}
+.explorer-tab span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}
+.explorer-main aside,.split>aside{background:var(--panel);padding-top:13px}
+.explorer-main aside button,.split>aside button{border-radius:5px;min-height:36px}
+.file-row:hover{background:var(--hover)}.file-row.selected{background:var(--selection)!important}
+.taskbar{box-shadow:0 -1px 3px #182e520e;backdrop-filter:blur(38px) saturate(120%)}
+.task-icon{border-radius:5px}.task-icon.current{background:var(--hover)}
+.task-search{box-shadow:inset 0 1px 2px #1421390c}
+.start-menu{background:var(--glass);border-radius:9px;box-shadow:0 14px 48px #192f5740}
+.start-search{margin-top:27px;background:var(--surface)}
+.start-heading button{font-weight:500;border-radius:4px}
+.pinned-grid button{border-radius:5px;font-size:12px}.pinned-grid svg{filter:drop-shadow(0 2px 1px #17345218)}
+.recommended button{border-radius:5px}.start-footer{background:var(--panel)}
+.quick-panel{padding:21px}.quick-grid{gap:14px 10px}.quick-grid button{border-radius:6px;min-height:72px}.quick-grid .on{box-shadow:inset 0 0 0 1px #ffffff1a}
+.quick-footer{font-size:12px}.quick-footer span{display:flex;align-items:center;gap:8px}
+.calendar-panel,.quick-panel,.context-menu{background:var(--glass)}
+.desktop-icon{border-radius:4px}.desktop-icon svg{filter:drop-shadow(0 2px 2px #17345b49)}
+.desktop-watermark{opacity:.74;font-size:12px}
+.uac-dialog{padding:0;max-width:480px}
+.uac-dialog h2,.uac-dialog>p,.uac-dialog .uac-info{margin-left:23px;margin-right:23px}
+.uac-header{padding:15px 20px;background:var(--chrome);font-size:14px}
+.uac-header button{margin-left:auto;border:0;background:transparent;padding:4px}
+.uac-dialog .button-row{background:var(--panel);padding:18px 23px;border-top:1px solid var(--border)}
+.verified-publisher{display:flex;align-items:center;gap:8px}.verified-publisher svg{color:#247a44}
+.boot-v2{background:#08090a;color:#fff;display:block}
+.boot-mark{position:absolute;top:28%;left:50%;transform:translate(-50%,-50%);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.boot-mark span{font-size:12px;letter-spacing:2.3px;color:#a1abb7}
+.boot-state{position:absolute;top:63%;left:50%;width:90%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+.boot-status{font-size:16px;font-weight:400;color:#e6e7eb}.boot-state small{color:#a1a7b4;font-size:12px}
+.win-loader{position:relative;display:inline-block;flex-shrink:0}.win-loader i{position:absolute;inset:0;animation:win-spin 1.8s cubic-bezier(.45,.04,.55,.96) infinite;opacity:0}
+.win-loader i:before{content:"";position:absolute;top:0;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background:currentColor}
+@keyframes win-spin{0%{transform:rotate(0deg);opacity:0}12%{opacity:1}65%{opacity:1}88%,100%{transform:rotate(540deg);opacity:0}}
+.firmware-details{position:absolute;bottom:70px;left:24px;font:11px/1.4 Consolas,monospace;color:#7e94ae}
+.firmware-details p{margin:2px 0}.boot-key{left:auto;right:24px;bottom:21px;display:flex;align-items:center;gap:7px;font-size:12px;border:0;color:#adb8c8}
+.boot-key kbd{border:1px solid #5b6473;border-radius:3px;padding:3px 5px}
+.welcome-boot{background:linear-gradient(135deg,#17345e,#0b1f46 73%);display:flex;align-items:center;justify-content:center}.welcome-content{text-align:center}.avatar-lg{width:126px;height:126px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;background:#ffffff26;box-shadow:0 0 45px #ffffff12}
+.welcome-content h1{font-size:31px;font-weight:500}.welcome-status{display:flex;align-items:center;justify-content:center;gap:15px;font-size:18px}.action-boot{background:#07090b}.action-boot .boot-state{top:50%}
+.off-v2{background:#08090b;gap:14px}.off-v2 .boot-power{width:84px;height:84px;display:grid;place-items:center;border-radius:50%;background:#1c2027;color:#c4d0e2;border:1px solid #465267;box-shadow:0 0 40px #395b8a2b}.off-v2 .off-setup{border:0;background:transparent;color:#8b9db5}.power-led{width:7px;height:7px;border-radius:50%;background:#677b93}
+.lock-v2{background-image:linear-gradient(180deg,#101d5260,#08244f49),url('../public/bloom-render.webp');background-size:cover;background-position:center;backdrop-filter:none;text-shadow:0 2px 14px #172f58a0;display:flex}
+.lock-v2.signin{background-image:radial-gradient(ellipse at center,#2b5a9166,#082049bc),url('../public/bloom-render.webp');backdrop-filter:blur(18px)}
+.lock-date{position:absolute;top:15%;text-align:center}.lock-date p{font-weight:500;font-size:21px;text-transform:capitalize;margin-top:12px}.lock-time{font-size:clamp(70px,12vw,134px);letter-spacing:-4px}
+.lock-v2 .unlock-hint{position:absolute;bottom:16%;display:flex;align-items:center;flex-direction:column;gap:8px;font-size:14px}.lock-v2 .lock-tray{align-items:center}
+.login-card .signin-button{display:flex;align-items:center;justify-content:center;gap:9px;margin:18px auto 16px;min-width:160px;background:#f7f9fc;color:#1b3049;border-radius:4px;text-shadow:none}
+.login-card small{color:#d8e6fa}.lock-icon{background:transparent!important;color:#fff!important;border:0!important;padding:9px;display:grid;place-items:center}
+.bsod-v2{background:#0078d4;padding:8vh 10vw}.bsod-layout{max-width:1000px}.bsod-v2 h1{font-size:clamp(25px,3.5vw,43px);line-height:1.3;margin:0 0 23px}.bsod-v2 .sad{font-size:clamp(88px,13vw,150px);margin:0 0 25px}.bsod-v2 p{font-size:17px;max-width:650px}.bsod-progress{font-size:27px;font-weight:300;margin:28px 0 32px}.bsod-detail{display:flex;align-items:flex-start;gap:20px}.bsod-detail p{font-size:13px;margin:5px 0}.bsod-buttons{margin-top:32px}.bsod-buttons button{padding:12px 15px}
+.winre-v2{background:#0067b8;color:#fff}.winre-v2 header{height:65px;border:0;max-width:1000px;margin:auto;padding:20px 22px;display:flex;gap:15px}.winre-brand{margin-left:auto;letter-spacing:2px;font-size:11px;color:#9fcff8}.winre-back{border:1px solid #ffffff99;border-radius:50%;padding:5px;display:grid;place-items:center}.winre-content{max-width:900px;margin:0 auto;padding:22px 30px 35px}.winre-content h1{font-size:36px;font-weight:300;margin:15px 0 27px}.winre-code{color:#dceeff;line-height:1.5}.winre-tiles{display:grid;gap:14px;max-width:710px}.winre-tile{display:flex;align-items:center;justify-content:flex-start;gap:15px;text-align:left;min-height:88px;background:transparent!important;border:1px solid transparent!important;padding:5px!important}.winre-tile:hover,.winre-tile:focus-visible{border-color:#ffffff9c!important;background:#ffffff10!important}.winre-icon{width:75px;height:75px;flex-shrink:0;display:grid;place-items:center;background:#ffffff24;border:1px solid #ffffff65}.winre-copy{display:flex;flex-direction:column;gap:6px}.winre-copy strong{font-size:20px;font-weight:400}.winre-copy small{font-size:13px;color:#d9eaff;line-height:1.4}.advanced-tiles{grid-template-columns:1fr 1fr}.winre-footer{margin-top:31px;font-size:12px;color:#cce7ff;display:flex;gap:9px;align-items:center}.winre-content .recovery-app .card{background:#ffffff12}
+@media(max-width:680px){.titlebar{height:44px;flex-basis:44px}.toolbar{padding:6px;gap:3px}.toolbar button{padding:6px 8px;min-height:34px}.explorer-tabbar{min-height:34px}.explorer-tab{height:31px}.actions button{min-width:32px;padding:6px}.actions button svg{width:16px;height:16px}.start-search{margin-top:14px}.pinned-grid button{font-size:11px}.quick-panel{padding:14px}.firmware-details{left:14px;font-size:10px;bottom:67px}.boot-key{right:14px}.winre-content{padding:12px 16px 25px}.winre-content h1{font-size:29px}.advanced-tiles{grid-template-columns:1fr}.winre-icon{width:61px;height:61px}.winre-copy strong{font-size:17px}.winre-copy small{font-size:12px}.winre-tile{min-height:72px}.winre-v2 header{font-size:12px;padding:12px 16px}.bsod-v2{padding:7vh 8vw}.bsod-v2 .sad{margin-bottom:15px}.bsod-progress{margin:20px 0}.bsod-v2 p{font-size:14px}.bsod-detail p{font-size:12px}}
+@media(max-height:460px) and (orientation:landscape){.boot-mark{top:23%}.boot-mark svg{width:64px;height:64px}.firmware-details{bottom:14px}.lock-date{top:8%}.lock-v2 .unlock-hint{bottom:8%}.welcome-content .avatar-lg,.login-card .avatar-lg{width:82px;height:82px;margin-bottom:10px}.avatar-lg svg{width:78px;height:78px}.login-card h1{margin:7px 0}.bsod-v2 .sad{font-size:64px;margin-bottom:12px}.bsod-v2 h1{font-size:23px}.bsod-v2{padding:20px 40px}.bsod-progress{margin:10px 0;font-size:22px}.winre-content h1{margin-top:0}}
