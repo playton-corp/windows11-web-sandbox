@@ -1,0 +1,32 @@
+.explorer-nav-pair{display:flex;flex-direction:column;width:100%}
+.cloud-drive{min-width:0;min-height:0;flex:1;display:flex;flex-direction:column;position:relative;background:var(--surface)}
+.cloud-drive>.scroll{flex:1;min-height:0}.cloud-toolbar{flex-wrap:wrap}
+.cloud-address{display:flex;align-items:center;gap:8px;min-width:0;flex:1;padding:7px 9px;border:1px solid var(--border);border-radius:5px;background:var(--surface);white-space:nowrap;overflow:hidden}
+.cloud-address span:last-child{overflow:hidden;text-overflow:ellipsis}.cloud-toolbar>input{min-width:75px;max-width:180px}
+.cloud-banner{padding:22px;background:linear-gradient(135deg,var(--panel),var(--selection));border:1px solid var(--border);border-radius:10px;margin-bottom:20px}
+.cloud-brand{display:flex;align-items:center;gap:15px;margin-bottom:15px}.cloud-brand h2{margin:0 0 4px;font-size:24px}.cloud-brand p{margin:0;font-size:13px;color:var(--muted)}
+.cloud-banner .meter{height:10px;margin:12px 0 8px}.cloud-banner small{display:block;line-height:1.45}
+.cloud-note{display:flex;gap:12px;align-items:flex-start;margin-top:20px;font-size:13px}.cloud-note>div{flex:1}.cloud-note button{display:block;margin:12px 0 0}
+.cloud-error,.cloud-busy{padding:11px 13px;border-radius:6px;margin:0 0 10px;line-height:1.45}.cloud-error{background:#f8dcd8;color:#9a2618}.cloud-busy{background:#d9edfb;color:#145f95}
+.cloud-modal{position:absolute;inset:0;z-index:35;background:#132c526e;display:grid;place-items:center;padding:14px}
+.cloud-detail{width:min(620px,100%);max-height:96%;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:9px;box-shadow:0 12px 36px #0003;overflow:hidden}
+.cloud-detail header{display:flex;align-items:center;padding:12px 17px;gap:12px;background:var(--chrome);border-bottom:1px solid var(--border)}
+.cloud-detail header strong{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.cloud-detail header button{border:0;background:transparent;display:grid;place-items:center}
+.cloud-file-meta{display:flex;gap:16px;align-items:center;overflow-wrap:anywhere;margin-bottom:16px}.cloud-file-meta h2{font-size:19px;margin-bottom:5px}
+.cloud-preview{max-width:100%;max-height:45vh;display:block;margin:0 auto 15px;border-radius:6px}.cloud-text{white-space:pre-wrap;overflow-wrap:anywhere;max-height:40vh;overflow:auto;user-select:text}
+.running-exe{height:min(70vh,95%);width:min(720px,100%)}.running-exe iframe{min-height:240px}
+.edge-v3{position:relative}.edge-tabstrip{overflow:auto;gap:3px;min-height:40px;align-items:stretch}
+.edge-tab{display:flex;align-items:center;min-width:118px;max-width:210px;border-radius:7px 7px 0 0;background:var(--panel);flex-shrink:0}
+.edge-tab>button:first-child{flex:1;display:flex;min-width:0;text-align:left;gap:8px;align-items:center}.edge-tab>button{border:0;background:transparent!important;padding:8px}
+.edge-tab span{display:block!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0!important;font-size:12px}
+.edge-tab.selected{background:var(--surface)!important}.edge-web{flex:1;display:flex;flex-direction:column;min-height:0}
+.edge-web-status{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:space-between;padding:7px 12px;background:var(--panel);font-size:12px;border-bottom:1px solid var(--border)}
+.edge-web-status span{flex:1;min-width:130px}.edge-web-status a,.edge-web-status button{font-size:12px;display:flex;align-items:center;gap:5px}
+.edge-web-frame{width:100%;height:100%;flex:1;border:0;min-height:200px;background:#fff}
+.edge-downloads{position:absolute;z-index:15;right:12px;top:88px;width:min(390px,95%);max-height:calc(100% - 110px);overflow:auto;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:9px;box-shadow:0 14px 35px #0003}
+.download-status{font-size:13px;overflow-wrap:anywhere;line-height:1.5}.edge-downloads .listline{overflow-wrap:anywhere}
+html[data-tv=true] button:focus-visible,html[data-tv=true] a:focus-visible,html[data-tv=true] input:focus-visible,html[data-tv=true] textarea:focus-visible,html[data-tv=true] select:focus-visible{outline:3px solid #1687e7!important;outline-offset:2px!important;box-shadow:0 0 0 4px #1687e733!important}
+html[data-tv=true] .desktop-icon:focus-visible{background:#ffffff4a!important;outline-color:#fff!important}
+html[data-tv=true] .task-icon:focus-visible,html[data-tv=true] .taskbar button:focus-visible{outline-offset:-2px!important}
+html[data-tv=true] .file-row{min-height:38px}html[data-tv=true] .toolbar button{min-height:36px}
+@media(max-width:680px){.cloud-banner{padding:12px}.cloud-brand{gap:8px}.cloud-brand svg{width:40px;height:40px}.cloud-brand h2{font-size:18px}.cloud-brand p{font-size:11px}.cloud-toolbar button{padding:5px;font-size:11px}.cloud-toolbar>input{max-width:100%;width:100%}.cloud-address{font-size:11px}.cloud-note{font-size:11px}.cloud-detail header{padding:9px}.cloud-file-meta{gap:8px}.cloud-file-meta svg{width:32px}.edge-tab{min-width:100px;max-width:150px}.edge-web-status{padding:6px;font-size:11px}}

@@ -34,7 +34,7 @@ export const apps:AppDef[]=[
  {id:'paint',name:'Paint',icon:'paint',exe:'mspaint.exe',deps:['gdi32.dll']},
  {id:'calc',name:'Калькулятор',icon:'calc',exe:'calc.exe'},
  {id:'edge',name:'Microsoft Edge',icon:'edge',exe:'msedge.exe',deps:['wininet.dll']},
- {id:'store',name:'Microsoft Store',icon:'store',exe:'WinStore.App.exe'},
+ {id:'store',name:'Playton Store',icon:'store',exe:'WinStore.App.exe'},
  {id:'terminal',name:'Терминал',icon:'terminal',exe:'cmd.exe'},
  {id:'cmd',name:'Командная строка',icon:'terminal',exe:'cmd.exe'},
  {id:'powershell',name:'PowerShell',icon:'powershell',exe:'powershell.exe'},
