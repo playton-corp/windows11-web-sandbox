@@ -28,6 +28,11 @@
 .task-icon{border-radius:5px}.task-icon.current{background:var(--hover)}
 .task-search{box-shadow:inset 0 1px 2px #1421390c}
 .start-menu{background:var(--glass);border-radius:9px;box-shadow:0 14px 48px #192f5740}
+.start-menu .all-apps{max-height:none;overflow:visible}
+.window{animation:playton-window-in .13s ease-out}
+@keyframes playton-window-in{from{opacity:1;transform:scale(.985);translate:0 4px}to{opacity:1;transform:scale(1);translate:0 0}}
+.welcome-content .avatar-lg,.login-card .avatar-lg{background:transparent;box-shadow:none}
+.avatar-lg svg{width:100%;height:100%;display:block}
 .start-search{margin-top:27px;background:var(--surface)}
 .start-heading button{font-weight:500;border-radius:4px}
 .pinned-grid button{border-radius:5px;font-size:12px}.pinned-grid svg{filter:drop-shadow(0 2px 1px #17345218)}

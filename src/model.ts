@@ -36,7 +36,7 @@ export const apps:AppDef[]=[
  {id:'edge',name:'Microsoft Edge',icon:'edge',exe:'msedge.exe',deps:['wininet.dll']},
  {id:'store',name:'Playton Store',icon:'store',exe:'WinStore.App.exe'},
  {id:'terminal',name:'Терминал',icon:'terminal',exe:'cmd.exe'},
- {id:'cmd',name:'Командная строка',icon:'terminal',exe:'cmd.exe'},
+ {id:'cmd',name:'Командная строка',icon:'cmd',exe:'cmd.exe'},
  {id:'powershell',name:'PowerShell',icon:'powershell',exe:'powershell.exe'},
  {id:'taskmgr',name:'Диспетчер задач',icon:'taskmgr',exe:'taskmgr.exe'},
  {id:'regedit',name:'Редактор реестра',icon:'regedit',exe:'regedit.exe',deps:['advapi32.dll']},
