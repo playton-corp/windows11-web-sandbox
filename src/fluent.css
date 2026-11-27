@@ -46,6 +46,24 @@
 .welcome-content,.login-card,.lock-date{animation:playton-login-in .35s ease-out}
 @keyframes playton-login-in{from{opacity:.2;translate:0 12px}to{opacity:1;translate:0 0}}
 .uac-dialog,.cloud-detail,.dialog-card{animation:playton-pop-in .18s cubic-bezier(.16,1,.3,1)}
+.flyout.panel-exiting,.desktop-context.panel-exiting{animation:playton-flyout-out .15s cubic-bezier(.4,0,1,1) forwards;pointer-events:none}
+@keyframes playton-flyout-out{from{opacity:1;translate:0 0}to{opacity:0;translate:0 15px}}
+.desktop-icon{transition:background .12s,border-color .12s,transform .12s;border:1px solid transparent}
+.desktop-icon.icon-selected{background:#cde8ff44;border-color:#c9e5ff80}
+.desktop-icon:active{transform:scale(.97)}
+.start-content .pinned-grid,.start-content .all-apps{animation:playton-list-in .2s cubic-bezier(.16,1,.3,1)}
+@keyframes playton-list-in{from{opacity:.25;translate:0 7px}to{opacity:1;translate:0 0}}
+.start-menu .pinned-grid button,.all-apps button,.recommended button,.quick-grid button,.desktop-cards button{transition:background .14s,border-color .14s,transform .12s}
+.start-menu .pinned-grid button:active,.quick-grid button:active,.desktop-cards button:active{transform:scale(.96)}
+.taskbar .task-icon{position:relative;transition:background .15s}
+.taskbar .task-icon[title]:hover:before{content:attr(title);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);z-index:900;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:5px;padding:7px 11px;white-space:nowrap;font-size:12px;box-shadow:0 4px 16px #0002;pointer-events:none;animation:playton-tooltip .15s .35s both}
+@keyframes playton-tooltip{from{opacity:0;translate:0 5px}to{opacity:1;translate:0 0}}
+.titlebar{transition:background-color .18s}.window-buttons button{transition:background-color .12s}
+.file-row,.explorer-main aside button{transition:background-color .12s}
+.lock-v2.signin{animation:playton-login-in .26s ease-out}
+.boot-mark{animation:playton-logo-in .26s ease-out}
+@keyframes playton-logo-in{from{opacity:0;scale:.94}to{opacity:1;scale:1}}
+@media(prefers-reduced-motion:reduce){.flyout.panel-exiting,.desktop-context.panel-exiting,.start-content .pinned-grid,.start-content .all-apps,.boot-mark,.lock-v2.signin,.taskbar .task-icon[title]:hover:before{animation:none!important}.desktop-icon,.titlebar,.start-menu button,.quick-grid button{transition:none!important}}
 @media(prefers-reduced-motion:reduce){.window,.flyout,.desktop-context,.snap-pop,.toast,.welcome-content,.login-card,.lock-date,.uac-dialog,.cloud-detail,.dialog-card{animation:none!important}.task-icon svg{transition:none}}
 .welcome-content .avatar-lg,.login-card .avatar-lg{background:transparent;box-shadow:none}
 .avatar-lg svg{width:100%;height:100%;display:block}
