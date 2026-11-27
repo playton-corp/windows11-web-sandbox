@@ -33,6 +33,18 @@
 @keyframes playton-window-in{from{opacity:1;transform:scale(.985);translate:0 4px}to{opacity:1;transform:scale(1);translate:0 0}}
 .welcome-content .avatar-lg,.login-card .avatar-lg{background:transparent;box-shadow:none}
 .avatar-lg svg{width:100%;height:100%;display:block}
+/* Visual dimensions adapted from the CC0 Win11React desktop and start menu. */
+.screen{--glass:rgba(242,242,242,.94);--task:rgba(243,243,243,.85)}
+.screen.dark{--glass:rgba(36,36,36,.94);--task:rgba(32,32,32,.85)}
+.taskbar{-webkit-backdrop-filter:saturate(3) blur(20px);backdrop-filter:saturate(3) blur(20px)}
+.start-menu{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-radius:8px}
+.start-footer{min-height:64px;flex-shrink:0;padding:8px 48px;background:var(--panel)}
+.desktop-icon svg{filter:drop-shadow(0 1px 2px #0003)}
+.small-avatar{background:transparent}.small-avatar svg{width:31px;height:31px}
+.avatar-lg{overflow:hidden;border-radius:50%;width:144px;height:144px}
+.welcome-boot{background:radial-gradient(ellipse at center,#244f76,#102b4b 70%,#0b1d35)}
+@media(min-width:681px) and (min-height:650px){.start-menu{width:640px}.pinned-grid button{min-height:78px}.task-icon{border-radius:4px}}
+@media(max-height:470px) and (orientation:landscape){.start-footer{min-height:42px;padding:5px 20px}}
 .start-search{margin-top:27px;background:var(--surface)}
 .start-heading button{font-weight:500;border-radius:4px}
 .pinned-grid button{border-radius:5px;font-size:12px}.pinned-grid svg{filter:drop-shadow(0 2px 1px #17345218)}

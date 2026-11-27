@@ -1,4 +1,5 @@
 import {useId,type CSSProperties,type ReactNode} from 'react';
+import {referenceIcons} from './referenceIcons';
 
 /** Original, resolution-independent Playton Fluent-style artwork. */
 type IconProps={name:string;size?:number;style?:CSSProperties;className?:string};
@@ -76,6 +77,7 @@ const outline:Record<string,ReactNode>={
 export function Icon({name,size=28,style,className}:IconProps){
  const id=useId().replace(/:/g,'');
  const g=(n:string)=>'url(#'+id+'-'+n+')';
+ if(referenceIcons[name])return <svg className={className} width={size} height={size} viewBox="0 0 64 64" style={style} aria-hidden="true"><image href={referenceIcons[name]} xlinkHref={referenceIcons[name]} width="64" height="64" preserveAspectRatio="xMidYMid meet"/></svg>;
  if(outline[name])return <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round" style={style} aria-hidden="true">{outline[name]}</svg>;
  const colors:Record<string,[string,string]>={start:['#39b8ff','#0875d7'],folder:['#ffe28c','#eaa621'],pc:['#a3dfff','#0b80d7'],notepad:['#8ce5f8','#1788c7'],terminal:['#51545f','#171820'],powershell:['#65bbf9','#065fbd'],settings:['#c9deed','#7794b1'],store:['#6cb6ff','#146bc8'],recycle:['#eAF7fa','#8fc7cd'],calc:['#a4b1bd','#435568'],security:['#4aaaff','#0a5bbd'],clock:['#fff','#adc6dc'],paint:['#cfeafa','#eac5ed'],photos:['#66c4fa','#0e60c2'],media:['#ff9778','#9d2baf'],disk:['#d9e3eb','#8d9eae'],taskmgr:['#d0f2ff','#73a9de'],regedit:['#b4e8fa','#0c8ac0'],desktop:['#9fd5fb','#458cd2'],control:['#8cd3fc','#287fc8'],devices:['#c1d3e8','#64829f'],events:['#a6ceff','#3384d1'],snip:['#b1cef7','#538dd7'],file:['#fff','#d9e4ef'],dll:['#fff','#c9d8ea'],'download-folder':['#9acaff','#2289db'],music:['#c7a9fa','#7c4dc3'],video:['#c7a4f5','#8754dc'],documents:['#b6ddfc','#63a8e3'],user:['#a7c1e0','#547ba9'],sun:['#fff19f','#f8bd3c']};
  const [top,bottom]=colors[name]||['#a7d6ef','#4d8ec8'];

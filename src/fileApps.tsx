@@ -1,12 +1,12 @@
 import {useRef,useState,useEffect,useMemo} from 'react';
 import {Icon,Glyph} from './icons';
-import {HOME,SYS,basename,parent,normalize,key,get,list,saveFile,remove,transfer,createFolder,takeOwnership,canModify,usedSpace,restoreTrash,log,type VFile} from './model';
+import {apps,HOME,SYS,basename,parent,normalize,key,get,list,saveFile,remove,transfer,createFolder,takeOwnership,canModify,usedSpace,restoreTrash,log,type VFile} from './model';
 import {download} from './storage';
 import {CloudDrive} from './CloudDrive';
 import {CLOUD_ID,cloudSave,blobRef,refPath,cloudParent} from './cloudStorage';
 import type {UIContext} from './uiTypes';
 const fmt=(size:number)=>size>=1048576?(size/1048576).toFixed(1)+' МБ':size>=1024?Math.ceil(size/1024)+' КБ':size+' Б';
-const fileIcon=(f:VFile)=>f.kind==='dir'?'folder':f.path.endsWith('.exe')?'pc':/\.(dll|sys|efi|ocx)$/i.test(f.path)?'dll':/\.(png|jpg|jpeg|webp|gif)$/i.test(f.path)?'photos':f.path.endsWith('.txt')?'notepad':'file';
+const fileIcon=(f:VFile)=>f.kind==='dir'?'folder':/\.(exe|msc)$/i.test(f.path)?(basename(f.path).toLowerCase()==='cmd.exe'?'cmd':apps.find(a=>a.exe?.toLowerCase()===basename(f.path).toLowerCase())?.icon||'pc'):/\.(dll|sys|efi|ocx)$/i.test(f.path)?'dll':/\.(png|jpg|jpeg|webp|gif)$/i.test(f.path)?'photos':/\.txt$/i.test(f.path)?'notepad':'file';
 const places=[['Главная',HOME],['Рабочий стол',HOME+'/Desktop'],['Загрузки',HOME+'/Downloads'],['Документы',HOME+'/Documents'],['Изображения',HOME+'/Pictures'],['Музыка',HOME+'/Music'],['Видео',HOME+'/Videos'],['Этот компьютер','C:/'],['Локальный диск (C:)','C:/'],['Windows','C:/Windows'],['System32',SYS]];
 export function Explorer({ui,payload}:{ui:UIContext;payload?:string}){
  const cloudPayload=payload?.startsWith('cloud:')||payload?.startsWith('cloud-file:');
