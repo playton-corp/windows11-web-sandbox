@@ -4,6 +4,7 @@ import {Explorer,Notepad,Paint,Media,Recycle} from './fileApps';
 import {Terminal,TaskManager,Registry,Settings,Recovery,Services,Events,Disks,Devices,Info,Control,Security,Update} from './systemApps';
 import {Calculator,Store,Clock,Snip,SandboxedApp} from './extraApps';
 import {BrowserApp} from './BrowserApp';
+import {DosApp} from './DosApp';
 export function AppContent({ui,w}:{ui:UIContext;w:WindowState}){
  const p=w.payload;switch(w.appId){
  case 'explorer':return <Explorer ui={ui} payload={p}/>;
@@ -12,6 +13,7 @@ export function AppContent({ui,w}:{ui:UIContext;w:WindowState}){
  case 'calc':return <Calculator/>;
  case 'edge':return <BrowserApp ui={ui}/>;
  case 'store':return <Store ui={ui}/>;
+ case 'playton-dos':return <DosApp/>;
  case 'terminal':case 'cmd':return <Terminal ui={ui}/>;
  case 'powershell':return <Terminal ui={ui} ps/>;
  case 'taskmgr':return <TaskManager ui={ui}/>;
