@@ -30,7 +30,23 @@
 .start-menu{background:var(--glass);border-radius:9px;box-shadow:0 14px 48px #192f5740}
 .start-menu .all-apps{max-height:none;overflow:visible}
 .window{animation:playton-window-in .13s ease-out}
-@keyframes playton-window-in{from{opacity:1;transform:scale(.985);translate:0 4px}to{opacity:1;transform:scale(1);translate:0 0}}
+@keyframes playton-window-in{from{opacity:.72;transform:scale(.96) translateY(12px)}to{opacity:1;transform:none}}
+.window:not(.minimized){animation:playton-window-in .2s cubic-bezier(.16,1,.3,1)}
+.window.minimized{display:none!important;animation:none!important}
+.windows-layer.dragging .window{animation:none;transition:none}
+.flyout{animation:playton-flyout-in .22s cubic-bezier(.16,1,.3,1)}
+@keyframes playton-flyout-in{from{opacity:.3;translate:0 24px}to{opacity:1;translate:0 0}}
+.desktop-context,.snap-pop{animation:playton-pop-in .13s cubic-bezier(.16,1,.3,1);transform-origin:top left}
+@keyframes playton-pop-in{from{opacity:.35;scale:.97}to{opacity:1;scale:1}}
+.task-icon svg{transition:transform .16s cubic-bezier(.16,1,.3,1)}
+.task-icon:active svg{transform:scale(.84)}
+.task-icon.running:after{transition:width .18s ease,background .18s ease}
+.toast{animation:playton-toast-in .24s cubic-bezier(.16,1,.3,1)}
+@keyframes playton-toast-in{from{opacity:0;translate:40px 0}to{opacity:1;translate:0 0}}
+.welcome-content,.login-card,.lock-date{animation:playton-login-in .35s ease-out}
+@keyframes playton-login-in{from{opacity:.2;translate:0 12px}to{opacity:1;translate:0 0}}
+.uac-dialog,.cloud-detail,.dialog-card{animation:playton-pop-in .18s cubic-bezier(.16,1,.3,1)}
+@media(prefers-reduced-motion:reduce){.window,.flyout,.desktop-context,.snap-pop,.toast,.welcome-content,.login-card,.lock-date,.uac-dialog,.cloud-detail,.dialog-card{animation:none!important}.task-icon svg{transition:none}}
 .welcome-content .avatar-lg,.login-card .avatar-lg{background:transparent;box-shadow:none}
 .avatar-lg svg{width:100%;height:100%;display:block}
 /* Visual dimensions adapted from the CC0 Win11React desktop and start menu. */
